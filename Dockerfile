@@ -3,6 +3,12 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
+<<<<<<< HEAD
 COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar demo.jar
 EXPOSE 8089
 ENTRYPOINT ["java","-jar","demo.jar"]
+=======
+COPY --from=build /target/BookStore-0.0.1-SNAPSHOT.jar BookStore.jar
+EXPOSE 8089
+ENTRYPOINT ["java","-jar","BookStore.jar"]
+>>>>>>> ac8dd1c0307acb61f65205758983ff5d166aa315
